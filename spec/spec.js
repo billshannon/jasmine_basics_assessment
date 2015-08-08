@@ -11,7 +11,7 @@ describe('Letter Grader', function () {
 });
 
 describe('Average Score', function () {
-    it('should take an array of test scores and return the average score',  function () {
+    it('should take an array of test scores and return the average score', function () {
         expect(code.outputAverageScore([90, 95, 87, 60])).toEqual(83);
         expect(code.outputAverageScore([90, 95, 87, 60, 54])).toEqual(77.2);
         expect(code.outputAverageScore([90, 95, 85])).toEqual(90);
@@ -22,7 +22,17 @@ describe('Average Score', function () {
 
 describe('Median Score', function () {
     it('should take an array of test scores and return the median score', function () {
-        expect(code.outputMedianScore([52,80,80,86,94])).toEqual(80);
-        expect(code.outputMedianScore([52,79,80,86,94,98])).toEqual(83);
+        expect(code.outputMedianScore([52, 80, 80, 86, 94])).toEqual(80);
+
+    });
+    it('should calculate the average of the middle two scores if there are an even amount of scores', function () {
+        expect(code.outputMedianScore([52, 79, 80, 86, 94, 98])).toEqual(83);
+    })
+
+})
+
+describe('Mode Score', function () {
+    it('should take an array of test scores and calculate the mode score', function () {
+        expect(code.outputModeScore([[82, 92, 75, 91, 92, 89, 95, 100, 86]])).toEqual(92);
     })
 })

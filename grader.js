@@ -34,3 +34,7 @@ exports.outputMedianScore = function (values) {
     }
     return middle
 }
+
+exports.outputModeScore = function (scores) {
+    return
+}
