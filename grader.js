@@ -11,3 +11,26 @@ exports.outputLetterGrader = function (grade) {
         return 'F'
     }
 };
+
+exports.outputAverageScore = function (score) {
+    var sum = score.reduce(function (a, b) {
+        return a + b;
+    });
+    var avg = sum / score.length;
+    return avg
+};
+
+exports.outputMedianScore = function (values) {
+    var sortValues = values.map(function (v) {
+        return v;
+    }).sort(function (a, b) {
+        return a - b;
+    });
+    var middle = Math.floor((sortValues.length - 1) / 2);
+    if (sortValues.length % 2) {
+        return sortValues[middle];
+    } else {
+        return (sortValues[middle] + sortValues[middle + 1]) / 2.0;
+    }
+    return middle
+}
