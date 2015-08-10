@@ -33,8 +33,24 @@ exports.outputMedianScore = function (values) {
         return (sortValues[middle] + sortValues[middle + 1]) / 2.0;
     }
     return middle
-}
+};
+
 
 exports.outputModeScore = function (scores) {
-    return
-}
+
+    scores.sort();
+    var max = 0, result, freq = 0;
+    for (var i = 0; i < scores.length; i++) {
+        if (scores[i] === scores[i + 1]) {
+            freq++;
+        }
+        else {
+            freq = 0;
+        }
+        if (freq > max) {
+            result = scores[i];
+            max = freq;
+        }
+    }
+    return result
+};
