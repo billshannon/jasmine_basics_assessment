@@ -21,8 +21,8 @@ exports.outputAverageScore = function (score) {
 };
 
 exports.outputMedianScore = function (values) {
-    var sortValues = values.map(function (v) {
-        return v;
+    var sortValues = values.map(function (val) {
+        return val;
     }).sort(function (a, b) {
         return a - b;
     });
